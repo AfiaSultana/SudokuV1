@@ -5,6 +5,69 @@ namespace SudokuV1
         public Form1()
         {
             InitializeComponent();
+            Load_Game();
+        }
+
+        private void Load_Game()
+        {
+            int[,] sudokuGrid = new int[,]
+       {
+            {5, 3, 0, 0, 7, 0, 0, 0, 0},
+            {6, 0, 0, 1, 9, 5, 0, 0, 0},
+            {0, 9, 8, 0, 0, 0, 0, 6, 0},
+            {8, 0, 0, 0, 6, 0, 0, 0, 3},
+            {4, 0, 0, 8, 0, 3, 0, 0, 1},
+            {7, 0, 0, 0, 2, 0, 0, 0, 6},
+            {0, 6, 0, 0, 0, 0, 2, 8, 0},
+            {0, 0, 0, 4, 1, 9, 0, 0, 5},
+            {0, 0, 0, 0, 8, 0, 0, 7, 9}
+       };
+            foreach (Control control in SudokuPanel.Controls)
+            {
+               
+                if (control is Label)
+                {
+                    
+                    Label label = (Label)control;
+                    Console.WriteLine(label.Name);
+
+                   
+                    int[] location = GetDigitsFromString(label.Name);
+                    Console.WriteLine(location[0]+" "+ location[1]);
+
+
+                    if (location.Length == 2)
+                    {
+                        int row = location[0]-1;
+                        int column = location[1]-1;
+                        if(sudokuGrid[row, column]==0)
+                        {
+                            label.Text = "  ";
+                        }
+                    else
+                        {
+                            label.Text = sudokuGrid[row, column].ToString();
+                        }
+                        
+                    }
+
+
+                    
+                }
+            }
+
+        }
+        static int[] GetDigitsFromString(string input)
+        {
+            // Extracting the digits from the input string
+            string digitsStr = input.Substring(1); // Remove the "L" prefix
+            int[] digits = new int[2];
+
+            // Parsing the digits to integers
+            digits[0] = int.Parse(digitsStr[0].ToString());
+            digits[1] = int.Parse(digitsStr[1].ToString());
+
+            return digits;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -68,112 +131,13 @@ namespace SudokuV1
 
 
 
+       
         private void L11_MouseClick(object sender, MouseEventArgs e)
         {
-            L11.Text = textBox1.Text;
-        }
-        private void L12_MouseClick(object sender, MouseEventArgs e)
-        {
-            L12.Text = textBox1.Text;
-        }
-        private void L13_MouseClick(object sender, MouseEventArgs e)
-        {
-            L13.Text = textBox1.Text;
-        }
-        private void L14_MouseClick(object sender, MouseEventArgs e)
-        {
-            L14.Text = textBox1.Text;
-        }
-        private void L15_MouseClick(object sender, MouseEventArgs e)
-        {
-            L15.Text = textBox1.Text;
-        }
-        private void L16_MouseClick(object sender, MouseEventArgs e)
-        {
-            L16.Text = textBox1.Text;
-        }
-        private void L17_MouseClick(object sender, MouseEventArgs e)
-        {
-            L17.Text = textBox1.Text;
-        }
-        private void L18_MouseClick(object sender, MouseEventArgs e)
-        {
-            L18.Text = textBox1.Text;
-        }
-        private void L19_MouseClick(object sender, MouseEventArgs e)
-        {
-            L19.Text = textBox1.Text;
-        }
-        private void L21_MouseClick(object sender, MouseEventArgs e)
-        {
-            L21.Text = textBox1.Text;
-        }
-        private void L22_MouseClick(object sender, MouseEventArgs e)
-        {
-            L22.Text = textBox1.Text;
-        }
-        private void L23_MouseClick(object sender, MouseEventArgs e)
-        {
-            L23.Text = textBox1.Text;
-        }
-        private void L24_MouseClick(object sender, MouseEventArgs e)
-        {
-            L24.Text = textBox1.Text;
-        }
-        private void L25_MouseClick(object sender, MouseEventArgs e)
-        {
-            L25.Text = textBox1.Text;
-        }
-        private void L26_MouseClick(object sender, MouseEventArgs e)
-        {
-            L26.Text = textBox1.Text;
-        }
-        private void L27_MouseClick(object sender, MouseEventArgs e)
-        {
-            L27.Text = textBox1.Text;
-        }
-        private void L28_MouseClick(object sender, MouseEventArgs e)
-        {
-            L28.Text = textBox1.Text;
-        }
-        private void L29_MouseClick(object sender, MouseEventArgs e)
-        {
-            L29.Text = textBox1.Text;
-        }
-        private void L31_MouseClick(object sender, MouseEventArgs e)
-        {
-            L31.Text = textBox1.Text;
-        }
-        private void L32_MouseClick(object sender, MouseEventArgs e)
-        {
-            L32.Text = textBox1.Text;
-        }
-        private void L33_MouseClick(object sender, MouseEventArgs e)
-        {
-            L33.Text = textBox1.Text;
-        }
-        private void L34_MouseClick(object sender, MouseEventArgs e)
-        {
-            L34.Text = textBox1.Text;
-        }
-        private void L35_MouseClick(object sender, MouseEventArgs e)
-        {
-            L35.Text = textBox1.Text;
-        }
-
-        private void L24_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void L25_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void L11_MouseClick(object sender, MouseEventArgs e)
-        {
-            L11.Text = textBox1.Text;
+            if (L11.Text == "  ")
+            {
+                L11.Text = textBox1.Text;
+            }
         }
         private void L12_MouseClick(object sender, MouseEventArgs e)
         {
@@ -496,34 +460,6 @@ namespace SudokuV1
             L99.Text = textBox1.Text;
         }
 
-        private void L15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void L22_MouseClick_1(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void L23_MouseClick_1(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void L24_MouseClick_1(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void L32_MouseClick_1(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void L95_MouseClick_1(object sender, MouseEventArgs e)
-        {
-
-        }
+        
     }
 }

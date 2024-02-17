@@ -110,13 +110,13 @@
             L97 = new Label();
             L98 = new Label();
             L99 = new Label();
-            panel1 = new Panel();
+            SudokuPanel = new Panel();
             L31 = new Label();
             L32 = new Label();
             panel2 = new Panel();
             label1 = new Label();
             textBox1 = new TextBox();
-            panel1.SuspendLayout();
+            SudokuPanel.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -133,11 +133,11 @@
             L11.AutoSize = true;
             L11.BackColor = SystemColors.Info;
             L11.BorderStyle = BorderStyle.FixedSingle;
-            L11.Location = new Point(172, 41);
+            L11.Location = new Point(1, 1);
             L11.Name = "L11";
             L11.Size = new Size(19, 22);
             L11.TabIndex = 1;
-            L11.Text = "1";
+            L11.Text = "  ";
             L11.Click += label2_Click;
             L11.MouseClick += L11_MouseClick;
             // 
@@ -146,11 +146,11 @@
             L33.AutoSize = true;
             L33.BackColor = SystemColors.Info;
             L33.BorderStyle = BorderStyle.FixedSingle;
-            L33.Location = new Point(211, 85);
+            L33.Location = new Point(41, 45);
             L33.Name = "L33";
             L33.Size = new Size(19, 22);
             L33.TabIndex = 8;
-            L33.Text = "0";
+            L33.Text = "3";
             L33.Click += L33_Click;
             L33.MouseClick += L33_MouseClick;
             // 
@@ -163,7 +163,7 @@
             label11.Name = "label11";
             label11.Size = new Size(19, 22);
             label11.TabIndex = 9;
-            label11.Text = "0";
+            label11.Text = "1";
             // 
             // label12
             // 
@@ -186,7 +186,6 @@
             L15.Size = new Size(19, 22);
             L15.TabIndex = 21;
             L15.Text = "5";
-            L15.Click += L15_Click;
             L15.MouseClick += L15_MouseClick;
             // 
             // L16
@@ -224,8 +223,7 @@
             L24.Size = new Size(19, 22);
             L24.TabIndex = 22;
             L24.Text = "4";
-            L24.Click += L24_Click;
-            L24.MouseClick += L24_MouseClick_1;
+            L24.MouseClick += L24_MouseClick;
             // 
             // L12
             // 
@@ -236,7 +234,7 @@
             L12.Name = "L12";
             L12.Size = new Size(19, 22);
             L12.TabIndex = 0;
-            L12.Text = "2";
+            L12.Text = "  ";
             L12.MouseClick += L12_MouseClick;
             // 
             // L25
@@ -249,7 +247,6 @@
             L25.Size = new Size(19, 22);
             L25.TabIndex = 24;
             L25.Text = "5";
-            L25.Click += L25_Click;
             L25.MouseClick += L25_MouseClick;
             // 
             // L21
@@ -310,7 +307,7 @@
             L22.Size = new Size(19, 22);
             L22.TabIndex = 9;
             L22.Text = "2";
-            L22.MouseClick += L22_MouseClick_1;
+            L22.MouseClick += L22_MouseClick;
             // 
             // L19
             // 
@@ -417,7 +414,7 @@
             L23.Size = new Size(19, 22);
             L23.TabIndex = 8;
             L23.Text = "3";
-            L23.MouseClick += L23_MouseClick_1;
+            L23.MouseClick += L23_MouseClick;
             // 
             // L38
             // 
@@ -980,7 +977,7 @@
             L95.Size = new Size(19, 22);
             L95.TabIndex = 54;
             L95.Text = "0";
-            L95.MouseClick += L95_MouseClick_1;
+            L95.MouseClick += L95_MouseClick;
             // 
             // L96
             // 
@@ -1102,93 +1099,95 @@
             L99.Text = "0";
             L99.MouseClick += L99_MouseClick;
             // 
-            // panel1
+            // SudokuPanel
             // 
-            panel1.BackColor = SystemColors.ActiveCaptionText;
-            panel1.Controls.Add(L31);
-            panel1.Controls.Add(L32);
-            panel1.Controls.Add(L99);
-            panel1.Controls.Add(L98);
-            panel1.Controls.Add(L97);
-            panel1.Controls.Add(L89);
-            panel1.Controls.Add(L88);
-            panel1.Controls.Add(L87);
-            panel1.Controls.Add(L79);
-            panel1.Controls.Add(L78);
-            panel1.Controls.Add(L77);
-            panel1.Controls.Add(L96);
-            panel1.Controls.Add(L95);
-            panel1.Controls.Add(L94);
-            panel1.Controls.Add(L86);
-            panel1.Controls.Add(L85);
-            panel1.Controls.Add(L84);
-            panel1.Controls.Add(L76);
-            panel1.Controls.Add(L75);
-            panel1.Controls.Add(L74);
-            panel1.Controls.Add(L93);
-            panel1.Controls.Add(L92);
-            panel1.Controls.Add(L91);
-            panel1.Controls.Add(L83);
-            panel1.Controls.Add(L82);
-            panel1.Controls.Add(L81);
-            panel1.Controls.Add(L73);
-            panel1.Controls.Add(L72);
-            panel1.Controls.Add(L71);
-            panel1.Controls.Add(L69);
-            panel1.Controls.Add(L66);
-            panel1.Controls.Add(L68);
-            panel1.Controls.Add(L63);
-            panel1.Controls.Add(L67);
-            panel1.Controls.Add(L65);
-            panel1.Controls.Add(L59);
-            panel1.Controls.Add(L62);
-            panel1.Controls.Add(L58);
-            panel1.Controls.Add(L57);
-            panel1.Controls.Add(L64);
-            panel1.Controls.Add(L49);
-            panel1.Controls.Add(L61);
-            panel1.Controls.Add(L48);
-            panel1.Controls.Add(L56);
-            panel1.Controls.Add(L47);
-            panel1.Controls.Add(L53);
-            panel1.Controls.Add(L55);
-            panel1.Controls.Add(L52);
-            panel1.Controls.Add(L54);
-            panel1.Controls.Add(L46);
-            panel1.Controls.Add(L51);
-            panel1.Controls.Add(L45);
-            panel1.Controls.Add(L43);
-            panel1.Controls.Add(L44);
-            panel1.Controls.Add(L42);
-            panel1.Controls.Add(L41);
-            panel1.Controls.Add(L39);
-            panel1.Controls.Add(L36);
-            panel1.Controls.Add(L38);
-            panel1.Controls.Add(L23);
-            panel1.Controls.Add(L37);
-            panel1.Controls.Add(L35);
-            panel1.Controls.Add(L29);
-            panel1.Controls.Add(L13);
-            panel1.Controls.Add(L28);
-            panel1.Controls.Add(L27);
-            panel1.Controls.Add(L34);
-            panel1.Controls.Add(L19);
-            panel1.Controls.Add(L22);
-            panel1.Controls.Add(L18);
-            panel1.Controls.Add(L26);
-            panel1.Controls.Add(L17);
-            panel1.Controls.Add(L21);
-            panel1.Controls.Add(L25);
-            panel1.Controls.Add(L12);
-            panel1.Controls.Add(L24);
-            panel1.Controls.Add(L14);
-            panel1.Controls.Add(L16);
-            panel1.Controls.Add(L15);
-            panel1.Location = new Point(171, 40);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(184, 211);
-            panel1.TabIndex = 1;
-            panel1.Paint += panel1_Paint;
+            SudokuPanel.BackColor = SystemColors.ActiveCaptionText;
+            SudokuPanel.Controls.Add(L31);
+            SudokuPanel.Controls.Add(L11);
+            SudokuPanel.Controls.Add(L32);
+            SudokuPanel.Controls.Add(L33);
+            SudokuPanel.Controls.Add(L99);
+            SudokuPanel.Controls.Add(L98);
+            SudokuPanel.Controls.Add(L97);
+            SudokuPanel.Controls.Add(L89);
+            SudokuPanel.Controls.Add(L88);
+            SudokuPanel.Controls.Add(L87);
+            SudokuPanel.Controls.Add(L79);
+            SudokuPanel.Controls.Add(L78);
+            SudokuPanel.Controls.Add(L77);
+            SudokuPanel.Controls.Add(L96);
+            SudokuPanel.Controls.Add(L95);
+            SudokuPanel.Controls.Add(L94);
+            SudokuPanel.Controls.Add(L86);
+            SudokuPanel.Controls.Add(L85);
+            SudokuPanel.Controls.Add(L84);
+            SudokuPanel.Controls.Add(L76);
+            SudokuPanel.Controls.Add(L75);
+            SudokuPanel.Controls.Add(L74);
+            SudokuPanel.Controls.Add(L93);
+            SudokuPanel.Controls.Add(L92);
+            SudokuPanel.Controls.Add(L91);
+            SudokuPanel.Controls.Add(L83);
+            SudokuPanel.Controls.Add(L82);
+            SudokuPanel.Controls.Add(L81);
+            SudokuPanel.Controls.Add(L73);
+            SudokuPanel.Controls.Add(L72);
+            SudokuPanel.Controls.Add(L71);
+            SudokuPanel.Controls.Add(L69);
+            SudokuPanel.Controls.Add(L66);
+            SudokuPanel.Controls.Add(L68);
+            SudokuPanel.Controls.Add(L63);
+            SudokuPanel.Controls.Add(L67);
+            SudokuPanel.Controls.Add(L65);
+            SudokuPanel.Controls.Add(L59);
+            SudokuPanel.Controls.Add(L62);
+            SudokuPanel.Controls.Add(L58);
+            SudokuPanel.Controls.Add(L57);
+            SudokuPanel.Controls.Add(L64);
+            SudokuPanel.Controls.Add(L49);
+            SudokuPanel.Controls.Add(L61);
+            SudokuPanel.Controls.Add(L48);
+            SudokuPanel.Controls.Add(L56);
+            SudokuPanel.Controls.Add(L47);
+            SudokuPanel.Controls.Add(L53);
+            SudokuPanel.Controls.Add(L55);
+            SudokuPanel.Controls.Add(L52);
+            SudokuPanel.Controls.Add(L54);
+            SudokuPanel.Controls.Add(L46);
+            SudokuPanel.Controls.Add(L51);
+            SudokuPanel.Controls.Add(L45);
+            SudokuPanel.Controls.Add(L43);
+            SudokuPanel.Controls.Add(L44);
+            SudokuPanel.Controls.Add(L42);
+            SudokuPanel.Controls.Add(L41);
+            SudokuPanel.Controls.Add(L39);
+            SudokuPanel.Controls.Add(L36);
+            SudokuPanel.Controls.Add(L38);
+            SudokuPanel.Controls.Add(L23);
+            SudokuPanel.Controls.Add(L37);
+            SudokuPanel.Controls.Add(L35);
+            SudokuPanel.Controls.Add(L29);
+            SudokuPanel.Controls.Add(L13);
+            SudokuPanel.Controls.Add(L28);
+            SudokuPanel.Controls.Add(L27);
+            SudokuPanel.Controls.Add(L34);
+            SudokuPanel.Controls.Add(L19);
+            SudokuPanel.Controls.Add(L22);
+            SudokuPanel.Controls.Add(L18);
+            SudokuPanel.Controls.Add(L26);
+            SudokuPanel.Controls.Add(L17);
+            SudokuPanel.Controls.Add(L21);
+            SudokuPanel.Controls.Add(L25);
+            SudokuPanel.Controls.Add(L12);
+            SudokuPanel.Controls.Add(L24);
+            SudokuPanel.Controls.Add(L14);
+            SudokuPanel.Controls.Add(L16);
+            SudokuPanel.Controls.Add(L15);
+            SudokuPanel.Location = new Point(171, 40);
+            SudokuPanel.Name = "SudokuPanel";
+            SudokuPanel.Size = new Size(184, 211);
+            SudokuPanel.TabIndex = 1;
+            SudokuPanel.Paint += panel1_Paint;
             // 
             // L31
             // 
@@ -1212,16 +1211,14 @@
             L32.Size = new Size(19, 22);
             L32.TabIndex = 10;
             L32.Text = "0";
-            L32.MouseClick += L32_MouseClick_1;
+            L32.MouseClick += L32_MouseClick;
             // 
             // panel2
             // 
             panel2.BackColor = SystemColors.HotTrack;
             panel2.Controls.Add(label1);
             panel2.Controls.Add(textBox1);
-            panel2.Controls.Add(L11);
-            panel2.Controls.Add(L33);
-            panel2.Controls.Add(panel1);
+            panel2.Controls.Add(SudokuPanel);
             panel2.Controls.Add(label11);
             panel2.Controls.Add(label12);
             panel2.Location = new Point(306, 35);
@@ -1259,8 +1256,8 @@
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            SudokuPanel.ResumeLayout(false);
+            SudokuPanel.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -1350,7 +1347,7 @@
         private Label L97;
         private Label L98;
         private Label L99;
-        private Panel panel1;
+        private Panel SudokuPanel;
         private Panel panel2;
         private Label L31;
         private Label L32;
